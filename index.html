@@ -136,13 +136,11 @@ table.sc td.id{font:600 .82rem var(--f-mono);color:var(--steel);white-space:nowr
 table.sc td.br{font:.8rem var(--f-mono);white-space:nowrap}
 
 /* programme */
-.prog{display:grid;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.prog{max-width:760px;display:grid;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
 .slot{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:16px 20px;border-bottom:1px solid var(--line)}
 .slot:last-child{border-bottom:0}
 .slot .t{font:600 .85rem var(--f-mono);color:var(--muted);font-variant-numeric:tabular-nums}
 .slot p{color:var(--muted);font-size:.92rem}
-.qs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-.qs div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;font-weight:500}
 
 /* problem section */
 .problem .q{max-width:none}
@@ -242,23 +240,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
       <h2>Friday 27 November 2026</h2>
       <p style="color:var(--muted)">Times and venue will be confirmed with Scientific Friday Bar.</p>
     </div>
-    <div class="two">
-      <div class="prog">
+    <div class="prog">
         <div class="slot"><span class="t">Doors</span><div><h3>Welcome</h3><p>Drinks, and the situation in five minutes.</p></div></div>
         <div class="slot"><span class="t">Talk 1</span><div><h3>No time to test</h3><p>The UAT problem and the system under test.</p></div></div>
         <div class="slot"><span class="t">Talk 2</span><div><h3>To be announced</h3><p>AI specialist, speaker to be confirmed.</p></div></div>
         <div class="slot"><span class="t">Live</span><div><h3>Your solutions</h3><p>Work on the problem at the bar, then show and tell what you came up with. <a href="#solutions">See how to take part</a>.</p></div></div>
         <div class="slot"><span class="t">Bar</span><div><h3>Discussion</h3><p>AI specialists and QA professionals compare notes.</p></div></div>
       </div>
-      <div style="display:grid;gap:14px;align-content:start">
-        <h3>Questions for the bar</h3>
-        <div class="qs">
-          <div>Can a user approve a system based on tests they did not write?</div>
-          <div>How do we catch rules the AI invented?</div>
-          <div>What does "enough coverage" mean for UAT?</div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
