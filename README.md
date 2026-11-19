@@ -1,6 +1,6 @@
 # AI-Assisted UAT: Scientific Friday Bar, 27 November 2026
 
-Event page for a Scientific Friday Bar session on **AI, Citizen Development and Quality Engineering**.
+Event page for a Scientific Friday Bar session on **AI and Quality Engineering**.
 
 **Situation:** systems being upgraded or extended must be approved by real users in User Acceptance Testing (UAT) before going to production.
 **Problem:** the key users who sign off have no time to prepare test cases and scenarios.
