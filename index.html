@@ -100,10 +100,9 @@ section .head{display:grid;gap:10px;margin-bottom:28px}
 .two > *{min-width:0}
 .panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px;display:grid;gap:10px}
 .panel ul{margin:0;padding-left:20px;display:grid;gap:6px}
-.problem{background:var(--deep);color:var(--surface);border-radius:14px;padding:28px;display:grid;gap:14px}
+.problem{background:var(--surface);color:var(--ink);border:1px solid var(--line);border-left:6px solid var(--deep);border-radius:14px;padding:28px;display:grid;gap:14px}
 .problem .q{font:600 clamp(1.25rem,2.6vw,1.6rem)/1.3 var(--f-display);text-wrap:balance}
-.problem .eyebrow{color:var(--amber)}
-.problem p{opacity:.9}
+.problem .eyebrow{color:var(--ink)}
 
 /* v-model */
 .vbox{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;overflow-x:auto}
@@ -166,13 +165,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
     <a class="logo" href="#welcome">SciFBar <span>×</span> QA</a>
     <ul>
       <li><a class="tab" href="#welcome">Welcome</a></li>
+      <li><a class="tab" href="#programme">Programme</a></li>
       <li><a class="tab" href="#talks">Talks</a></li>
       <li><a class="tab" href="#situation">Situation</a></li>
       <li><a class="tab" href="#v-model">V-model</a></li>
       <li><a class="tab" href="#system">System under test</a></li>
-      <li><a class="tab" href="#experiment">Experiment</a></li>
-      <li><a class="tab" href="#scenarios">Scenarios</a></li>
-      <li><a class="tab" href="#programme">Programme</a></li>
     </ul>
   </div>
 </nav>
@@ -190,7 +187,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
       </div>
       <div class="cta">
         <a class="btn primary" href="#talks">Read the talk summaries</a>
-        <a class="btn ghost" href="https://lnkd.in/gk3ChSdu" target="_blank" rel="noopener">Open the simulator ↗</a>
+        <a class="btn ghost" href="https://marckpetersen.github.io/airport-stand-simulator/" target="_blank" rel="noopener">Open the simulator ↗</a>
       </div>
     </div>
     <div class="board" role="img" aria-label="Departure-board style view of the simulator's planned arrivals and their stand outcomes">
@@ -212,6 +209,34 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
 </header>
 
 <main>
+<section id="programme">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Programme</p>
+      <h2>Friday 27 November 2026</h2>
+      <p style="color:var(--muted)">Times and venue will be confirmed with Scientific Friday Bar.</p>
+    </div>
+    <div class="two">
+      <div class="prog">
+        <div class="slot"><span class="t">Doors</span><div><h3>Welcome</h3><p>Drinks, and the situation in five minutes.</p></div></div>
+        <div class="slot"><span class="t">Talk 1</span><div><h3>No time to test</h3><p>The UAT problem and the system under test.</p></div></div>
+        <div class="slot"><span class="t">Talk 2</span><div><h3>From requirement to test case</h3><p>How AI generates tests, and where it fails.</p></div></div>
+        <div class="slot"><span class="t">Live</span><div><h3>Working session</h3><p>AI specialists and QA professionals take on the problem, using the simulator as the system under test.</p></div></div>
+        <div class="slot"><span class="t">Bar</span><div><h3>Discussion</h3><p>AI specialists and QA professionals compare notes.</p></div></div>
+      </div>
+      <div style="display:grid;gap:14px;align-content:start">
+        <h3>Questions for the bar</h3>
+        <div class="qs">
+          <div>Can a user approve a system based on tests they did not write?</div>
+          <div>How do we catch rules the AI invented?</div>
+          <div>What does "enough coverage" mean for UAT?</div>
+          <div>Can key users build their own test assets as citizen developers?</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="talks">
   <div class="wrap">
     <div class="head">
@@ -223,7 +248,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
         <span class="tag">Talk 1 · Quality Engineering</span>
         <h3>No time to test: can AI write the acceptance test for the people who must sign it off?</h3>
         <p class="who"><b>Marck Petersen</b> · Quality Engineering &amp; Citizen Development</p>
-        <p class="summary">Every system upgrade ends the same way. Before anything reaches production, the real users must test it in User Acceptance Testing (UAT) and approve it. But the key users who own that approval rarely have time to write test cases and scenarios, so UAT gets squeezed, delayed or reduced to a quick click-through. In this talk we look at that last step of the V-model and ask a practical question: can AI read the requirements and prepare test scenarios that a busy user only needs to review, run and sign? Using a small Airport Stand Allocation Simulator as the system under test, we show what AI gets right, what it gets wrong, and where human judgement stays essential.</p>
+        <p class="summary">Every system upgrade ends the same way. Before anything reaches production, the real users must test it in User Acceptance Testing (UAT) and approve it. But the key users who own that approval rarely have time to write test cases and scenarios, so UAT gets squeezed, delayed or reduced to a quick click-through. In this talk we look at that last step of the V-model and ask a practical question: can AI read the requirements and prepare test scenarios that a busy user only needs to review, run and sign? To make the problem concrete, we use a small Airport Stand Allocation Simulator that stands in for a real system going through change.</p>
         <button class="copy" type="button" data-copy="talk-1">Copy summary</button>
       </article>
       <article class="talk" id="talk-2">
@@ -263,7 +288,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
     <div class="problem" id="problem" style="margin-top:32px">
       <p class="eyebrow">The problem to solve</p>
       <p class="q">How can we use AI so that UAT scenarios are still prepared, executed and documented, even when the key users have no time to write them?</p>
-      <p>The users stay in charge of the approval. AI does the preparation: it reads the requirements, proposes scenarios with steps and expected results, and the users review and run them.</p>
     </div>
   </div>
 </section>
@@ -327,7 +351,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
     <div class="head">
       <p class="eyebrow">System under test</p>
       <h2>Airport Stand Allocation Simulator</h2>
-      <p class="prose" style="color:var(--muted)">An imaginary but realistic system built for this event. Aircraft land, and the system assigns each one a parking stand based on wingspan. It has clear business rules, which makes it a good target for AI-generated acceptance tests.</p>
+      <p class="prose" style="color:var(--muted)">The simulator stands in for a real problem: a business system in production that is being changed and must pass user acceptance testing before go-live. Aircraft land, and the system assigns each one a parking stand based on wingspan, following clear business rules. For this event, the simulator is the system under test (SUT).</p>
     </div>
     <div class="two">
       <div style="display:grid;gap:16px">
@@ -339,7 +363,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
           <div class="stand"><b class="mono">A4</b><span>≤ 70 m</span></div>
         </div>
         <p style="color:var(--muted);font-size:.92rem">Plus a ground waiting area with room for 3 aircraft. Each planned scenario cycle runs for about two minutes and repeats.</p>
-        <div><a class="btn primary" href="https://lnkd.in/gk3ChSdu" target="_blank" rel="noopener">Try the simulator ↗</a></div>
+        <div><a class="btn primary" href="https://marckpetersen.github.io/airport-stand-simulator/" target="_blank" rel="noopener">Try the simulator ↗</a></div>
       </div>
       <div class="reqs" aria-label="Business rules">
         <div class="req"><span class="id">BR-001</span><span>Assign the <b>smallest suitable available</b> stand: the free stand with the lowest max wingspan that still fits the aircraft.</span></div>
@@ -353,75 +377,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
   </div>
 </section>
 
-<section id="experiment">
-  <div class="wrap">
-    <div class="head">
-      <p class="eyebrow">The experiment</p>
-      <h2>AI prepares, the user decides</h2>
-      <p class="prose" style="color:var(--muted)">We run this flow live at the bar. Steps marked in amber are done by a person.</p>
-    </div>
-    <ol class="flow">
-      <li><h3>Collect</h3><p>Requirements, business rules and what changed in this release.</p></li>
-      <li><h3>Generate</h3><p>AI drafts UAT scenarios with steps, test data and expected results, each traced to a rule.</p></li>
-      <li class="human"><h3>Review</h3><p>The key user reads, corrects and approves the scenarios in minutes, not days.</p></li>
-      <li class="human"><h3>Execute</h3><p>Scenarios are run against the simulator and results are recorded as evidence.</p></li>
-      <li class="human"><h3>Sign off</h3><p>Coverage per rule is visible, so approval is based on evidence, not trust.</p></li>
-    </ol>
-  </div>
-</section>
 
-<section id="scenarios">
-  <div class="wrap">
-    <div class="head">
-      <p class="eyebrow">Example output</p>
-      <h2>What AI-prepared UAT scenarios should look like</h2>
-      <p class="prose" style="color:var(--muted)">A target example written from the simulator's rules. At the event we compare scenarios generated live against this list.</p>
-    </div>
-    <div class="tablewrap">
-      <table class="sc">
-        <thead><tr><th>ID</th><th>Scenario</th><th>Given / When</th><th>Expected result</th><th>Rule</th></tr></thead>
-        <tbody>
-          <tr><td class="id">UAT-01</td><td>Small aircraft gets the smallest stand</td><td>All stands free. SK101 (20 m) lands.</td><td>SK101 is assigned A1.</td><td class="br">BR-001</td></tr>
-          <tr><td class="id">UAT-02</td><td>Next stand up when the best fit is busy</td><td>A2 occupied, A3 free. AF808 (34 m) lands.</td><td>AF808 is assigned A3, not A4.</td><td class="br">BR-001</td></tr>
-          <tr><td class="id">UAT-03</td><td>No double allocation</td><td>A4 occupied by EK404. QR505 (65 m) lands.</td><td>A4 stays with EK404. QR505 is not assigned A4.</td><td class="br">BR-002</td></tr>
-          <tr><td class="id">UAT-04</td><td>No suitable stand means waiting</td><td>All stands occupied. DY606 (20 m) lands.</td><td>DY606 taxis to the waiting area and appears in the queue.</td><td class="br">BR-003</td></tr>
-          <tr><td class="id">UAT-05</td><td>Queue order with size exception</td><td>QR505 (65 m) waits ahead of DY606 (20 m). A1 is released.</td><td>DY606 takes A1. QR505 keeps waiting for A4.</td><td class="br">BR-004</td></tr>
-          <tr><td class="id">UAT-06</td><td>Stand freed only after clearance</td><td>EK404 starts pushback from A4.</td><td>A4 shows releasing until EK404 has left the stand area, then available.</td><td class="br">BR-005</td></tr>
-          <tr><td class="id">UAT-07</td><td>Oversized aircraft rejected</td><td>SQ880 (80 m) arrives.</td><td>SQ880 is marked unsupported and gets no stand.</td><td class="br">BR-006</td></tr>
-          <tr><td class="id">UAT-08</td><td>Boundary: exactly at the limit</td><td>All stands free. An aircraft with 24 m wingspan lands.</td><td>It is assigned A1 (limit is inclusive).</td><td class="br">BR-001</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<section id="programme">
-  <div class="wrap">
-    <div class="head">
-      <p class="eyebrow">Programme</p>
-      <h2>Friday 27 November 2026</h2>
-      <p style="color:var(--muted)">Times and venue will be confirmed with Scientific Friday Bar.</p>
-    </div>
-    <div class="two">
-      <div class="prog">
-        <div class="slot"><span class="t">Doors</span><div><h3>Welcome</h3><p>Drinks, and the situation in five minutes.</p></div></div>
-        <div class="slot"><span class="t">Talk 1</span><div><h3>No time to test</h3><p>The UAT problem and the system under test.</p></div></div>
-        <div class="slot"><span class="t">Talk 2</span><div><h3>From requirement to test case</h3><p>How AI generates tests, and where it fails.</p></div></div>
-        <div class="slot"><span class="t">Live</span><div><h3>The experiment</h3><p>Generate, review and run scenarios against the simulator with the audience.</p></div></div>
-        <div class="slot"><span class="t">Bar</span><div><h3>Discussion</h3><p>AI specialists and QA professionals compare notes.</p></div></div>
-      </div>
-      <div style="display:grid;gap:14px;align-content:start">
-        <h3>Questions for the bar</h3>
-        <div class="qs">
-          <div>Can a user approve a system based on tests they did not write?</div>
-          <div>How do we catch rules the AI invented?</div>
-          <div>What does "enough coverage" mean for UAT?</div>
-          <div>Can key users build their own test assets as citizen developers?</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 </main>
 
 <footer>
