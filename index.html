@@ -90,6 +90,8 @@ section .head{display:grid;gap:10px;margin-bottom:28px}
 .talk{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px;display:grid;gap:12px;align-content:start;min-width:0}
 .talk .who{font-size:.9rem;color:var(--muted)}
 .talk .who b{color:var(--ink);font-weight:600}
+.talk.pending{border-style:dashed;background:transparent}
+.talk.pending h3{color:var(--muted)}
 .tag{display:inline-block;font:600 .7rem var(--f-mono);letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:var(--amber-soft);color:var(--ink)}
 .copy{justify-self:start;background:none;border:1px solid var(--line);color:var(--muted);border-radius:6px;padding:5px 10px;font:500 .8rem var(--f-body);cursor:pointer}
 .copy:hover{color:var(--ink)}
@@ -244,7 +246,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
       <div class="prog">
         <div class="slot"><span class="t">Doors</span><div><h3>Welcome</h3><p>Drinks, and the situation in five minutes.</p></div></div>
         <div class="slot"><span class="t">Talk 1</span><div><h3>No time to test</h3><p>The UAT problem and the system under test.</p></div></div>
-        <div class="slot"><span class="t">Talk 2</span><div><h3>From requirement to test case</h3><p>How AI generates tests, and where it fails.</p></div></div>
+        <div class="slot"><span class="t">Talk 2</span><div><h3>To be announced</h3><p>AI specialist, speaker to be confirmed.</p></div></div>
         <div class="slot"><span class="t">Live</span><div><h3>Your solutions</h3><p>Work on the problem at the bar, then show and tell what you came up with. <a href="#solutions">See how to take part</a>.</p></div></div>
         <div class="slot"><span class="t">Bar</span><div><h3>Discussion</h3><p>AI specialists and QA professionals compare notes.</p></div></div>
       </div>
@@ -275,12 +277,17 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
         <p class="summary">Every system upgrade ends the same way. Before anything reaches production, the real users must test it in User Acceptance Testing (UAT) and approve it. But the key users who own that approval rarely have time to write test cases and scenarios, so UAT gets squeezed, delayed or reduced to a quick click-through. In this talk we look at that last step of the V-model and ask a practical question: can AI read the requirements and prepare test scenarios that a busy user only needs to review, run and sign? To make the problem concrete, we use a small Airport Stand Allocation Simulator that stands in for a real system going through change.</p>
         <button class="copy" type="button" data-copy="talk-1">Copy summary</button>
       </article>
-      <article class="talk" id="talk-2">
+      <article class="talk pending" id="talk-2">
         <span class="tag">Talk 2 · Artificial Intelligence</span>
-        <h3>From requirement to test case: what happens inside the language model, and where it fails</h3>
+        <h3>Talk to be announced</h3>
         <p class="who"><b>Speaker to be confirmed</b> · AI specialist</p>
-        <p class="summary">Large language models can produce dozens of test cases from a single requirement in seconds. But are they testing the system or repeating the text back to us? This talk opens the box. We look at how a model turns a business rule into concrete steps and expected results, why it sometimes invents rules that do not exist, and how techniques such as structured prompts, examples and retrieval of the real requirements make the output more reliable. We finish with a simple way to measure whether AI-generated tests actually cover the rules that matter.</p>
-        <button class="copy" type="button" data-copy="talk-2">Copy summary</button>
+        <p>We are waiting for confirmation of who will give this talk. When the speaker is confirmed, this box will show:</p>
+        <ul style="margin:0;padding-left:20px;display:grid;gap:4px;color:var(--muted)">
+          <li>The speaker's name and background</li>
+          <li>The title of the talk</li>
+          <li>A short summary of what the talk is about</li>
+        </ul>
+        <p style="color:var(--muted);font-size:.92rem">The talk will give the AI perspective on the problem, without giving away a solution. Finding solutions is left to the participants at the session.</p>
       </article>
     </div>
     <p class="note">Draft summaries for the Scientific Friday Bar events page. Speaker names and titles will be updated as they are confirmed.</p>
